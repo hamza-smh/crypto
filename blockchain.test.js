@@ -2,7 +2,7 @@ const Blockchain = require('./blockchain')
 const Block = require('./block')
 
 describe('Blockchain', () => {
-  let blockchain;
+  let blockchain
 
   beforeEach(() => {
     blockchain = new Blockchain()
@@ -38,27 +38,28 @@ describe('Blockchain', () => {
         blockchain.addBlock({ data: 'Goku' })
       })
 
-      it('and a lastHash ref has changed ', () => {
+      describe('and a lastHash ref has changed ', () => {
         it('returns false', () => {
-          blockchain[2].lastHash = { data: 'broken chain Last Hash' }
+          blockchain.chain[2].lastHash = 'broken chain Last Hash'
 
           expect(Blockchain.isValidChain(blockchain.chain)).toBe(false)
         })
       })
-    })
+    
 
     describe('and chain contains a block with invalid field', () => {
       it('returns false', () => {
-        blockchain[2].lastHash = { data: 'Invalid Data Here' }
+        blockchain.chain[2].data = 'Invalid Data Here'
 
         expect(Blockchain.isValidChain(blockchain.chain)).toBe(false)
       })
     })
 
-    describe('and the chain does not contain any invalid fiels', () => {
+    describe('and the chain does not contain any invalid fields', () => {
       it('returns true', () => {
         expect(Blockchain.isValidChain(blockchain.chain)).toBe(true)
       })
+    })
     })
   })
 })
