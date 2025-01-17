@@ -2,10 +2,13 @@ const Blockchain = require('./blockchain')
 const Block = require('./block')
 
 describe('Blockchain', () => {
-  let blockchain
+  let blockchain, newChain, orignalChain
 
   beforeEach(() => {
     blockchain = new Blockchain()
+    newChain = new Blockchain()
+
+    orignalChain = blockchain.chain
   })
 
   it('contains a chain array', () => {
@@ -45,21 +48,59 @@ describe('Blockchain', () => {
           expect(Blockchain.isValidChain(blockchain.chain)).toBe(false)
         })
       })
-    
 
-    describe('and chain contains a block with invalid field', () => {
-      it('returns false', () => {
-        blockchain.chain[2].data = 'Invalid Data Here'
+      describe('and chain contains a block with invalid field', () => {
+        it('returns false', () => {
+          blockchain.chain[2].data = 'Invalid Data Here'
 
-        expect(Blockchain.isValidChain(blockchain.chain)).toBe(false)
+          expect(Blockchain.isValidChain(blockchain.chain)).toBe(false)
+        })
+      })
+
+      describe('and the chain does not contain any invalid fields', () => {
+        it('returns true', () => {
+          expect(Blockchain.isValidChain(blockchain.chain)).toBe(true)
+        })
+      })
+    })
+  })
+
+  describe('replaceChain()', () => {
+    describe('when the new chain is not longer', () => {
+      it('and does not replace the chain', () => {
+        newChain.chain[0] = { new: 'fooChain' }
+
+        blockchain.replaceChain(newChain.chain)
+
+        expect(blockchain.chain).toEqual(orignalChain)
       })
     })
 
-    describe('and the chain does not contain any invalid fields', () => {
-      it('returns true', () => {
-        expect(Blockchain.isValidChain(blockchain.chain)).toBe(true)
+    describe('when the new chain is longer', () => {
+      beforeEach(() => {
+        newChain.addBlock({ data: 'Horse' })
+        newChain.addBlock({ data: 'Apple' })
+        newChain.addBlock({ data: 'Goku' })
       })
-    })
+
+      describe('and the chain is invalid', () => {
+        it('does not replace the chain', () => {
+          newChain.chain[2].hash = 'fake-hash'
+
+          blockchain.replaceChain(newChain.chain)
+
+          expect(blockchain.chain).toEqual(orignalChain)
+        })
+      })
+
+      describe('and the chain is valid', () => {
+        it('replaces the chain', () => {
+
+          blockchain.replaceChain(newChain.chain)
+
+          expect(blockchain.chain).toEqual(newChain.chain)
+        })
+      })
     })
   })
 })
