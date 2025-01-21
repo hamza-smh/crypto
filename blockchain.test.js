@@ -103,10 +103,8 @@ describe('Blockchain', () => {
 
       describe('and the chain is invalid', () => {
         beforeEach(()=>{
-
             newChain.chain[2].hash = 'fake-hash'
             blockchain.replaceChain(newChain.chain)
-
         })
         it('does not replace the chain', () => {
           expect(blockchain.chain).toEqual(orignalChain)
