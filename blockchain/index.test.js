@@ -1,5 +1,5 @@
-const cryptoHash = require('./crypto-hash')
-const Blockchain = require('./blockchain')
+const cryptoHash = require('../util/crypto-hash')
+const Blockchain = require('.')
 const Block = require('./block')
 
 describe('Blockchain', () => {
@@ -58,25 +58,29 @@ describe('Blockchain', () => {
         })
       })
 
+      describe('and the chain contains a block with jumped difficulty', () => {
+        it('returns false', () => {
+          const lastBlock = blockchain.chain[blockchain.chain.length - 1]
+          const lastHash = lastBlock.hash
+          const timestamp = Date.now()
+          const nonce = 0
+          const data = []
+          const difficulty = lastBlock.difficulty - 3
 
-      describe('and the chain contains a block with jumped difficulty',()=>{
-        it('returns false',()=>{
-          const lastBlock = blockchain.chain[blockchain.chain.length-1];
-          const lastHash  = lastBlock.hash;
-          const timestamp = Date.now();
-          const nonce = 0;
-          const data=[];
-          const difficulty = lastBlock.difficulty-3;
+          const hash = cryptoHash(timestamp, lastHash, difficulty, nonce, data)
 
-          const hash = cryptoHash(timestamp,lastHash,difficulty, nonce, data)
-
-          const badBlock = new Block({timestamp,lastHash,hash,nonce,data,difficulty})
+          const badBlock = new Block({
+            timestamp,
+            lastHash,
+            hash,
+            nonce,
+            data,
+            difficulty
+          })
 
           blockchain.chain.push(badBlock)
-          
+
           expect(Blockchain.isValidChain(blockchain.chain)).toBe(false)
-
-
         })
       })
 
@@ -89,32 +93,29 @@ describe('Blockchain', () => {
   })
 
   describe('replaceChain()', () => {
-    
-    let errorMock,logMock;
+    let errorMock, logMock
 
     beforeEach(() => {
-      errorMock = jest.fn();
-      logMock = jest.fn();
+      errorMock = jest.fn()
+      logMock = jest.fn()
 
-      global.console.error = errorMock;
-      global.console.log = logMock;
-    });
-
+      global.console.error = errorMock
+      global.console.log = logMock
+    })
 
     describe('when the new chain is not longer', () => {
-        beforeEach(()=>{
-            newChain.chain[0] = { new: 'fooChain' }
+      beforeEach(() => {
+        newChain.chain[0] = { new: 'fooChain' }
 
-            blockchain.replaceChain(newChain.chain)
-        })
+        blockchain.replaceChain(newChain.chain)
+      })
       it('and does not replace the chain', () => {
-
         expect(blockchain.chain).toEqual(orignalChain)
-      });
+      })
 
-      it('logs an error',() => {
-        expect(errorMock).toHaveBeenCalled();
-      });
+      it('logs an error', () => {
+        expect(errorMock).toHaveBeenCalled()
+      })
     })
 
     describe('when the new chain is longer', () => {
@@ -125,31 +126,30 @@ describe('Blockchain', () => {
       })
 
       describe('and the chain is invalid', () => {
-        beforeEach(()=>{
-            newChain.chain[2].hash = 'fake-hash'
-            blockchain.replaceChain(newChain.chain)
+        beforeEach(() => {
+          newChain.chain[2].hash = 'fake-hash'
+          blockchain.replaceChain(newChain.chain)
         })
         it('does not replace the chain', () => {
           expect(blockchain.chain).toEqual(orignalChain)
         })
 
-        it('logs an error',() => {
-            expect(errorMock).toHaveBeenCalled();
-        });
+        it('logs an error', () => {
+          expect(errorMock).toHaveBeenCalled()
+        })
       })
 
       describe('and the chain is valid', () => {
-        beforeEach(()=>{
-            blockchain.replaceChain(newChain.chain)
+        beforeEach(() => {
+          blockchain.replaceChain(newChain.chain)
         })
         it('replaces the chain', () => {
           expect(blockchain.chain).toEqual(newChain.chain)
         })
-        
-        it('logs about the chain replacement',() => {
-            expect(logMock).toHaveBeenCalled();
-        });
 
+        it('logs about the chain replacement', () => {
+          expect(logMock).toHaveBeenCalled()
+        })
       })
     })
   })
