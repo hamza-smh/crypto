@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "start": "node index.js",
-    "dev": "npm run start-redis && nodemon index.js",
+    "dev": "nodemon index.js",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
     "start-redis": "redis-server --daemonize yes"
   },
@@ -23,7 +23,7 @@
     "express": "^4.16.3",
     "hex-to-binary": "^1.0.1",
     "pubnub": "^4.21.6",
-    "redis": "^2.8.0",
+    
     "request": "^2.88.0"
   }
 }
