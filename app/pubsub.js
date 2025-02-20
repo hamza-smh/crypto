@@ -9,13 +9,18 @@ const credentials = {
 
 const CHANNELS = {
   TEST: 'TEST',
-  BLOCKCHAIN: 'BLOCKCHAIN'
+  BLOCKCHAIN: 'BLOCKCHAIN',
+  TRANSACTION:'TRANSACTION'
 }
 
 class PubSub {
-  constructor ({ blockchain }) {
+  constructor ({blockchain, transactionPool, wallet }) {
     this.blockchain = blockchain
-    this.pubnub = new PubNub(credentials)
+    this.transactionPool = transactionPool
+    this.wallet = wallet
+
+    this.pubnub = new PubNub(credentials);
+
 
     this.pubnub.subscribe({ channels: Object.values(CHANNELS) })
 
@@ -29,24 +34,52 @@ class PubSub {
 
         console.log(`Received message on channel ${channel}: ${message}`)
         const parsedMessage = JSON.parse(message)
-        if (channel === CHANNELS.BLOCKCHAIN) {
-          this.blockchain.replaceChain(parsedMessage)
+
+         switch (channel) {
+          case CHANNELS.BLOCKCHAIN:
+            this.blockchain.replaceChain(parsedMessage)
+            break
+          case CHANNELS.TRANSACTION:
+            if (!this.transactionPool.existingTransaction({
+              inputAddress: this.wallet.publicKey
+            })) {
+              this.transactionPool.setTransaction(parsedMessage);
+            }
+            break;
+          default:
+            console.log('Received message on unknown channel:', message)
+            break
+         }
         }
-      }
+        // if (channel === CHANNELS.BLOCKCHAIN) {
+        //   this.blockchain.replaceChain(parsedMessage)
+        // }
     }
   }
 
-  publish ({ channel, message }) {
-    this.pubnub.unsubscribe(channel, () => {
-      this.pubnub.publish(channel, message, () => {
-        this.pubnub.subscribe(channel)
-      })
-    })
-  }
-
-  // publish({channel,message}){
-  //   this.pubnub.publish({channel,message});
+  // publish ({ channel, message }) {
+  //   this.pubnub.unsubscribe(channel, () => {
+  //     this.pubnub.publish(channel, message = (message)=>JSON.parse(message), () => {
+  //       this.pubnub.subscribe(channel)
+  //     })
+  //   })
   // }
+
+  publish({channel,message}){
+    this.pubnub.publish({channel,message});
+  }
+  //  publish({ channel, message }) {
+  //   this.pubnub.publish({ channel, message },
+  //     (status, response) => {
+  //       if (status.error) {
+  //         console.error(`Publish failed on channel ${channel}:`, status);
+  //       } else {
+  //         console.log(`Message published to ${channel}:`, response);
+  //       }
+  //     }
+  //   );
+  // }
+
 
   broadcastChain () {
     this.publish({
@@ -54,11 +87,45 @@ class PubSub {
       message: JSON.stringify(this.blockchain.chain)
     })
   }
+  broadcastTransaction(transaction){
+    this.publish({
+      channel: CHANNELS.TRANSACTION,
+      message: JSON.stringify(transaction)
+    })
+  }
 }
 //  const testPubSub = new PubSub();
 //  testPubSub.publish({channel:CHANNELS.TEST,message:"Hi Bro"})
 
 module.exports = PubSub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Redis Implementation
 // const redis = require('redis')
@@ -116,3 +183,12 @@ module.exports = PubSub
 // // setTimeout(()=>testPubSub.publisher.publish(CHANNELS.TEST,"Yay !"),1000)
 
 // module.exports = PubSub;
+
+
+
+
+
+
+
+
+
