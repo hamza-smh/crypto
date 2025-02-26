@@ -1,6 +1,8 @@
-const {cryptoHash} = require('../util')
+const { cryptoHash } = require('../util')
 const Blockchain = require('.')
 const Block = require('./block')
+const Wallet = require('../wallet')
+const Transaction = require('../wallet/transaction')
 
 describe('Blockchain', () => {
   let blockchain, newChain, orignalChain
@@ -151,6 +153,56 @@ describe('Blockchain', () => {
           expect(logMock).toHaveBeenCalled()
         })
       })
+    })
+  })
+
+  describe('validTransactionData()', () => {
+    let transaction, rewardTransaction, wallet
+    beforeEach(() => {
+      wallet = new Wallet()
+      transaction = wallet.createTransaction({
+        recipient: 'foo-address',
+        amount: 65
+      })
+      rewardTranasction = Transaction.rewardTranasction({ minerWallet: wallet })
+    })
+
+    describe('and the transaction is valid', () => {
+      it('returns true', () => {
+        newChain.addBlock({ data: [transaction, rewardTransaction] })
+
+        expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(true)
+      })
+    })
+
+    describe('and the transaction data has multiple rewards', () => {
+      it('returns false', () => {
+        newChain.addBlock({ data: [transaction, rewardTransaction, rewardTransaction] })
+        
+        expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(false)
+      })
+    })
+
+    describe('and the transaction data has atleast one malformed outputMap', () => {
+      describe('and the transaction is not a reward transaction', () => {
+        it('returns false', () => {
+          transaction.outputMap[wallet.publicKey] = 9999999
+          newChain.addBlock({ data: [transaction, rewardTransaction] }) //transaction is malformed here
+
+          expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(false)          
+        })
+      })
+      describe('and the transaction is a reward transaction', () => {
+        it('returns false', () => {})
+      })
+    })
+
+    describe('and the transaction data has atleast one malformed input', () => {
+      it('returns false', () => {})
+    })
+
+    describe('and a block contains multiple identical transactions',()=>{
+      it('returns false', () => {})
     })
   })
 })
