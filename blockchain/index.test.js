@@ -230,12 +230,21 @@ describe('Blockchain', () => {
         newChain.addBlock({ data: [evilTransaction, rewardTransaction] })
 
         expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(false)
+        expect(errorMock).toHaveBeenCalled()
 
       })
     })
 
     describe('and a block contains multiple identical transactions',()=>{
-      it('returns false and logs error', () => {})
+      it('returns false and logs error', () => {
+        newChain.addBlock({
+          data: [transaction, transaction, transaction,  rewardTransaction]
+        })
+        
+        expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(false)
+        expect(errorMock).toHaveBeenCalled()
+
+      })
     })
   })
 })
