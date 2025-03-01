@@ -1,0 +1,37 @@
+.fullBody {
+  color: #fff;
+  text-align: center;
+  word-wrap: break-word;
+  background: #1f1e1e;
+  width: 100%;
+  padding: 5% 10%;
+  font-family: Quicksand;
+  font-size: 20px;
+  overflow-x: hidden;
+}
+
+.App {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  width: 200px;
+  height: 200px;
+}
+
+.walletInfo {
+  word-wrap: break-word;
+  border: 1px dotted #fff;
+  width: 100%;
+}
+
+.block {
+  border: 1px solid #fff;
+  margin: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+/*# sourceMappingURL=index.c472ef0f.css.map */
