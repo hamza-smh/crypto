@@ -27537,6 +27537,8 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _indexCss = require("../index.css");
+var _block = require("./Block");
+var _blockDefault = parcelHelpers.interopDefault(_block);
 function _defineProperty(e, r, t) {
     return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
         value: t,
@@ -27579,49 +27581,27 @@ class Blocks extends (0, _react.Component) {
                     children: "Blocks"
                 }, void 0, false, {
                     fileName: "client/src/components/Blocks.js",
-                    lineNumber: 21,
+                    lineNumber: 22,
                     columnNumber: 17
                 }, this),
-                this.state.blocks.map((block, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                className: "block",
-                                children: [
-                                    "Data: ",
-                                    JSON.stringify(block.data),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                        fileName: "client/src/components/Blocks.js",
-                                        lineNumber: 27,
-                                        columnNumber: 63
-                                    }, this),
-                                    "Hash: ",
-                                    block.hash,
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                        fileName: "client/src/components/Blocks.js",
-                                        lineNumber: 28,
-                                        columnNumber: 47
-                                    }, this)
-                                ]
-                            }, block.hash, true, {
-                                fileName: "client/src/components/Blocks.js",
-                                lineNumber: 24,
-                                columnNumber: 25
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                fileName: "client/src/components/Blocks.js",
-                                lineNumber: 31,
-                                columnNumber: 25
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                this.state.blocks.map((block, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "block",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _blockDefault.default), {
+                            block: block
+                        }, block.hash, false, {
+                            fileName: "client/src/components/Blocks.js",
+                            lineNumber: 25,
+                            columnNumber: 29
+                        }, this)
+                    }, block.hash, false, {
                         fileName: "client/src/components/Blocks.js",
-                        lineNumber: 23,
+                        lineNumber: 24,
                         columnNumber: 62
                     }, this))
             ]
         }, void 0, true, {
             fileName: "client/src/components/Blocks.js",
-            lineNumber: 20,
+            lineNumber: 21,
             columnNumber: 12
         }, this);
     }
@@ -27633,7 +27613,110 @@ exports.default = Blocks;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../index.css":"b8ft2"}],"b8ft2":[function() {},{}],"hxQeD":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../index.css":"b8ft2","./Block":"dvAge"}],"b8ft2":[function() {},{}],"dvAge":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$765c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$765c.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+function _defineProperty(e, r, t) {
+    return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+        value: t,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+    }) : e[r] = t, e;
+}
+function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
+}
+function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+        var i = e.call(t, r || "default");
+        if ("object" != typeof i) return i;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+}
+class Block extends (0, _react.Component) {
+    constructor(...args){
+        super(...args);
+        _defineProperty(this, "state", {
+            displayTransaction: false
+        });
+        _defineProperty(this, "toggleTransaction", ()=>{
+            this.setState({
+                displayTransaction: !this.state.displayTransaction
+            });
+        });
+    }
+    get displayTransaction() {
+        const { timestamp, hash, data } = this.props.block;
+        const stringifiedData = JSON.stringify(data);
+        const dataDisplay = stringifiedData.length > 35 ? `${stringifiedData.substring(0, 35)}...` : stringifiedData;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                "Data: ",
+                dataDisplay
+            ]
+        }, void 0, true, {
+            fileName: "client/src/components/Block.js",
+            lineNumber: 25,
+            columnNumber: 12
+        }, this);
+    }
+    render() {
+        console.log("this.displayTransaction", this.displayTransaction);
+        const { timestamp, hash } = this.props.block;
+        const hashDisplay = `${hash.substring(0, 15)}...`;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    children: [
+                        "Timestamp: ",
+                        new Date(timestamp).toLocaleString()
+                    ]
+                }, void 0, true, {
+                    fileName: "client/src/components/Block.js",
+                    lineNumber: 35,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    children: [
+                        "Hash: ",
+                        hashDisplay
+                    ]
+                }, void 0, true, {
+                    fileName: "client/src/components/Block.js",
+                    lineNumber: 36,
+                    columnNumber: 17
+                }, this),
+                this.displayTransaction
+            ]
+        }, void 0, true, {
+            fileName: "client/src/components/Block.js",
+            lineNumber: 34,
+            columnNumber: 12
+        }, this);
+    }
+}
+exports.default = Block;
+
+  $parcel$ReactRefreshHelpers$765c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hxQeD":[function(require,module,exports,__globalThis) {
 module.exports = require("ae2919715359ec57").getBundleURL('1jP1U') + "logo.bf8c541d.png" + "?" + Date.now();
 
 },{"ae2919715359ec57":"lgJ39"}],"lgJ39":[function(require,module,exports,__globalThis) {

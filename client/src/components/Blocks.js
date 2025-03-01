@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import '../index.css'
+import Block from "./Block"
 
 class Blocks extends Component{
     state = { blocks : [] }
@@ -16,16 +17,10 @@ class Blocks extends Component{
                 <h1>Blocks</h1>
                 
                     {this.state.blocks.map((block,index) => (
-                        <ul>
-                        <li key={block.hash} className="block">
-                            {/* Index: {index}<br/> */}
-                            {/* Timestamp: {block.timestamp}<br/> */}
-                            Data: {JSON.stringify(block.data)}<br/>
-                            Hash: {block.hash}<br/>
-                            {/* Previous Hash: {block.lastHash}<br/> */}
-                        </li>
-                        <br />
-                        </ul>
+                        <div key={block.hash} className="block">
+                            <Block block={block} key={block.hash}/>
+                        </div>
+                        
                     ))}
                 
             </div>
