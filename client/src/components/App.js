@@ -25,7 +25,6 @@ class App extends Component {
                     <div>Address:<br />{address}</div>
                     <div>Balance:{balance}</div>
                 </div>
-                <br />
                 <Blocks />
             </div>
             

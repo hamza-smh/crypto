@@ -2,7 +2,7 @@
   color: #fff;
   text-align: center;
   word-wrap: break-word;
-  background: #1b1b2b;
+  background: #200101;
   width: 100%;
   padding: 5% 10%;
   font-family: Quicksand;
@@ -25,13 +25,29 @@
 .walletInfo {
   word-wrap: break-word;
   border: 1px dotted #fff;
+  border-radius: 10px;
   width: 100%;
+  padding: 5%;
 }
 
 .block {
-  border: 1px solid #fff;
+  border: 1px solid #ff0101;
+  border-radius: 10px;
   margin: 2%;
+  padding: 2% 5%;
+  box-shadow: 1px 2px 10px #fff;
+}
+
+.btnRed {
+  background-color: #ff0101;
+  margin-top: 10px;
+}
+
+.transaction {
+  flex-direction: row;
+  justify-content: space-between;
   padding-left: 5%;
   padding-right: 5%;
+  display: flex;
 }
 /*# sourceMappingURL=index.c472ef0f.css.map */
