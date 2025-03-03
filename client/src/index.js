@@ -1,22 +1,20 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './components/App'
-import "./index.css"
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./components/App";
+import "./index.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Blocks from "./components/Blocks";
+import ConductTransaction from "./components/ConductTransaction";
+import TransactionPool from "./components/TransactionPool";
 
-
-const root = createRoot(document.getElementById('root'))
-root.render(<App />)
-
-
-
-
-
-
-
-
-// "test": "jest --watchAll",
-//     "start": "node index.js",
-//     "dev": "nodemon index.js",
-//     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
-//     "start-redis": "redis-server --daemonize yes",
-//     "build-client": "parcel build client/src/index.html --out-dir client/dist"
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <Router>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/blocks" element={<Blocks />} />
+      <Route path="/conduct-transaction" element={<ConductTransaction />} />
+      <Route path="/transaction-pool" element={<TransactionPool />} />
+    </Routes>
+  </Router>
+);

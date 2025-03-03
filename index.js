@@ -145,21 +145,40 @@ const walletBarAction = () =>
     amount: 15
   })
 
-for (let i = 0; i < 10; i++) {
-  if (i % 3 === 0) {
-    walletAction()
-    walletFooAction()
-  } else if (i % 3 === 1) {
-    walletAction()
-    walletBarAction()
-  } else {
-    walletFooAction()
-    walletBarAction()
+// for (let i = 0; i < 10; i++) {
+//   if (i % 3 === 0) {
+//     walletAction()
+//     walletFooAction()
+//   } else if (i % 3 === 1) {
+//     walletAction()
+//     walletBarAction()
+//   } else {
+//     walletFooAction()
+//     walletBarAction()
+//   }
+//   transactionMiner.mineTransactions()
+// }
+
+
+setTimeout(() => {
+  for (let i = 0; i < 10; i++) {
+    try {
+      if (i % 3 === 0) {
+        walletAction();
+        walletFooAction();
+      } else if (i % 3 === 1) {
+        walletAction();
+        walletBarAction();
+      } else {
+        walletFooAction();
+        walletBarAction();
+      }
+      transactionMiner.mineTransactions();
+    } catch (error) {
+      console.error("Error during transaction generation:", error.message);
+    }
   }
-  transactionMiner.mineTransactions()
-}
-
-
+}, 2000); // Delay execution by 2 seconds
 
 
 let PEER_PORT

@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import '../index.css'
 import Block from "./Block"
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png"
 
 class Blocks extends Component{
     state = { blocks : [] }
@@ -13,8 +15,20 @@ class Blocks extends Component{
         console.log("this.state",this.state);
 
         return (
-            <div>
-                <h1>Blocks</h1>
+            <div className='fullBody'>
+               < div className = 'btnHolder' >
+                   <button className = "myBtn" >
+                        <Link to="/" >Home</Link>
+                    </button>
+                    <button className = "myBtn" >
+                        <Link to="/conduct-transaction" >Conduct Transaction</Link>
+                    </button>
+                    <button className = "myBtn" >
+                        < Link to = "/transaction-pool-map" >Transaction Pool Map </Link>
+                    </button>
+                </div>
+                <img className="smallLogo" src={logo}></img> 
+                <h1><b>Blocks</b></h1>
                 
                     {this.state.blocks.map((block,index) => (
                         <div key={block.hash} className="block">
