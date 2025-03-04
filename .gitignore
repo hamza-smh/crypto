@@ -1,0 +1,44 @@
+# 🔹 Node.js (Backend) Specific
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env
+.env.local
+.env.*.local
+
+# 🔹 React (Frontend) Specific
+*.log
+node_modules/
+build/
+dist/
+.cache/
+public/static/
+public/*.hot-update.js
+*.hot-update.json
+.DS_Store
+out/
+.next/
+.vite/
+
+# 🔹 OS-Specific Files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# 🔹 Editor & IDE Files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# 🔹 TypeScript / Babel
+*.tsbuildinfo
+
+# 🔹 Logs and Coverage
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+coverage/

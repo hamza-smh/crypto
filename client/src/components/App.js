@@ -22,15 +22,21 @@ class App extends Component {
             
             <div className='fullBody'>
                 <div className='btnHolder'>
-                    <button className="myBtn">
-                        <Link to="/blocks">Blocks</Link>
-                    </button>
-                    <button className="myBtn">
-                        <Link to="/conduct-transaction">Conduct Transaction</Link>
-                    </button>
-                    <button className="myBtn">
-                        <Link to="/transaction-pool">Transaction Pool</Link>
-                    </button>
+                    <Link to='/blocks'>
+                      <button className='myBtn'>
+                          Blocks
+                      </button>
+                    </Link>
+                    <Link to='/conduct-transaction'>
+                        <button className='myBtn'>
+                            Conduct Transaction
+                        </button>
+                    </Link>
+                    <Link to='/transaction-pool'>
+                        <button className='myBtn'>
+                            Transaction Pool
+                        </button>
+                    </Link>
                 </div>
                 <img className="logo" src={logo}></img> 
                 <div>

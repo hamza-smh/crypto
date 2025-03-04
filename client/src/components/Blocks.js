@@ -17,15 +17,21 @@ class Blocks extends Component{
         return (
             <div className='fullBody'>
                < div className = 'btnHolder' >
-                   <button className = "myBtn" >
-                        <Link to="/" >Home</Link>
-                    </button>
-                    <button className = "myBtn" >
-                        <Link to="/conduct-transaction" >Conduct Transaction</Link>
-                    </button>
-                    <button className = "myBtn" >
-                        < Link to = "/transaction-pool-map" >Transaction Pool Map </Link>
-                    </button>
+                   <Link to='/'>
+                      <button className='myBtn'>
+                          Home
+                      </button>
+                    </Link>
+                    <Link to='/conduct-transaction'>
+                        <button className='myBtn'>
+                            Conduct Transaction
+                        </button>
+                    </Link>
+                    <Link to='/transaction-pool'>
+                        <button className='myBtn'>
+                            Transaction Pool
+                        </button>
+                    </Link>
                 </div>
                 <img className="smallLogo" src={logo}></img> 
                 <h1><b>Blocks</b></h1>

@@ -26629,49 +26629,49 @@ class App extends (0, _react.Component) {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "btnHolder",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "myBtn",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/blocks",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/blocks",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "myBtn",
                                 children: "Blocks"
                             }, void 0, false, {
                                 fileName: "client/src/components/App.js",
                                 lineNumber: 29,
-                                columnNumber: 25
+                                columnNumber: 23
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/App.js",
                             lineNumber: 28,
                             columnNumber: 21
                         }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "myBtn",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/conduct-transaction",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/conduct-transaction",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "myBtn",
                                 children: "Conduct Transaction"
                             }, void 0, false, {
                                 fileName: "client/src/components/App.js",
-                                lineNumber: 32,
+                                lineNumber: 34,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/App.js",
-                            lineNumber: 31,
+                            lineNumber: 33,
                             columnNumber: 21
                         }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "myBtn",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/transaction-pool",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/transaction-pool",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "myBtn",
                                 children: "Transaction Pool"
                             }, void 0, false, {
                                 fileName: "client/src/components/App.js",
-                                lineNumber: 35,
+                                lineNumber: 39,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/App.js",
-                            lineNumber: 34,
+                            lineNumber: 38,
                             columnNumber: 21
                         }, this)
                     ]
@@ -26685,7 +26685,7 @@ class App extends (0, _react.Component) {
                     src: (0, _logoPngDefault.default)
                 }, void 0, false, {
                     fileName: "client/src/components/App.js",
-                    lineNumber: 38,
+                    lineNumber: 44,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -26693,12 +26693,12 @@ class App extends (0, _react.Component) {
                         children: "Welcome to Cryptochain in React..."
                     }, void 0, false, {
                         fileName: "client/src/components/App.js",
-                        lineNumber: 40,
+                        lineNumber: 46,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "client/src/components/App.js",
-                    lineNumber: 39,
+                    lineNumber: 45,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -26709,14 +26709,14 @@ class App extends (0, _react.Component) {
                                 "Address:",
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                     fileName: "client/src/components/App.js",
-                                    lineNumber: 44,
+                                    lineNumber: 50,
                                     columnNumber: 34
                                 }, this),
                                 address
                             ]
                         }, void 0, true, {
                             fileName: "client/src/components/App.js",
-                            lineNumber: 44,
+                            lineNumber: 50,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -26726,13 +26726,13 @@ class App extends (0, _react.Component) {
                             ]
                         }, void 0, true, {
                             fileName: "client/src/components/App.js",
-                            lineNumber: 45,
+                            lineNumber: 51,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "client/src/components/App.js",
-                    lineNumber: 43,
+                    lineNumber: 49,
                     columnNumber: 17
                 }, this)
             ]
@@ -27688,49 +27688,49 @@ class Blocks extends (0, _react.Component) {
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "btnHolder",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "myBtn",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "myBtn",
                                 children: "Home"
                             }, void 0, false, {
                                 fileName: "client/src/components/Blocks.js",
                                 lineNumber: 26,
-                                columnNumber: 25
+                                columnNumber: 23
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/Blocks.js",
                             lineNumber: 25,
                             columnNumber: 20
                         }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "myBtn",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/conduct-transaction",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/conduct-transaction",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "myBtn",
                                 children: "Conduct Transaction"
                             }, void 0, false, {
                                 fileName: "client/src/components/Blocks.js",
-                                lineNumber: 29,
+                                lineNumber: 31,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/Blocks.js",
-                            lineNumber: 28,
+                            lineNumber: 30,
                             columnNumber: 21
                         }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                            className: "myBtn",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                to: "/transaction-pool-map",
-                                children: "Transaction Pool Map "
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/transaction-pool",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                className: "myBtn",
+                                children: "Transaction Pool"
                             }, void 0, false, {
                                 fileName: "client/src/components/Blocks.js",
-                                lineNumber: 32,
+                                lineNumber: 36,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/Blocks.js",
-                            lineNumber: 31,
+                            lineNumber: 35,
                             columnNumber: 21
                         }, this)
                     ]
@@ -27744,7 +27744,7 @@ class Blocks extends (0, _react.Component) {
                     src: (0, _logoPngDefault.default)
                 }, void 0, false, {
                     fileName: "client/src/components/Blocks.js",
-                    lineNumber: 35,
+                    lineNumber: 41,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -27752,12 +27752,12 @@ class Blocks extends (0, _react.Component) {
                         children: "Blocks"
                     }, void 0, false, {
                         fileName: "client/src/components/Blocks.js",
-                        lineNumber: 36,
+                        lineNumber: 42,
                         columnNumber: 21
                     }, this)
                 }, void 0, false, {
                     fileName: "client/src/components/Blocks.js",
-                    lineNumber: 36,
+                    lineNumber: 42,
                     columnNumber: 17
                 }, this),
                 this.state.blocks.map((block, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27766,12 +27766,12 @@ class Blocks extends (0, _react.Component) {
                             block: block
                         }, block.hash, false, {
                             fileName: "client/src/components/Blocks.js",
-                            lineNumber: 39,
+                            lineNumber: 45,
                             columnNumber: 29
                         }, this)
                     }, block.hash, false, {
                         fileName: "client/src/components/Blocks.js",
-                        lineNumber: 38,
+                        lineNumber: 44,
                         columnNumber: 62
                     }, this))
             ]
@@ -42192,7 +42192,7 @@ const Transaction = ({ transaction })=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: [
                                 "To: ",
-                                `${recipient.substring(0, 20)}...`
+                                recipient.length > 20 ? `${recipient.substring(0, 20)}...` : recipient
                             ]
                         }, void 0, true, {
                             fileName: "client/src/components/Transactions.js",
@@ -49594,10 +49594,10 @@ class ConductTransaction extends (0, _react.Component) {
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "btnHolder",
                             children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    className: "myBtn",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        to: "/",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        className: "myBtn",
                                         children: "Home"
                                     }, void 0, false, {
                                         fileName: "client/src/components/ConductTransaction.js",
@@ -49609,34 +49609,34 @@ class ConductTransaction extends (0, _react.Component) {
                                     lineNumber: 54,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    className: "myBtn",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        to: "/blocks",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/blocks",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        className: "myBtn",
                                         children: "Blocks"
                                     }, void 0, false, {
                                         fileName: "client/src/components/ConductTransaction.js",
-                                        lineNumber: 58,
-                                        columnNumber: 15
+                                        lineNumber: 60,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "client/src/components/ConductTransaction.js",
-                                    lineNumber: 57,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    className: "myBtn",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                        to: "/transaction-pool",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                    to: "/transaction-pool",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                        className: "myBtn",
                                         children: "Transaction Pool"
                                     }, void 0, false, {
                                         fileName: "client/src/components/ConductTransaction.js",
-                                        lineNumber: 61,
-                                        columnNumber: 15
+                                        lineNumber: 65,
+                                        columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "client/src/components/ConductTransaction.js",
-                                    lineNumber: 60,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -49649,7 +49649,7 @@ class ConductTransaction extends (0, _react.Component) {
                             children: "Conduct a transaction"
                         }, void 0, false, {
                             fileName: "client/src/components/ConductTransaction.js",
-                            lineNumber: 64,
+                            lineNumber: 70,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormGroup), {
@@ -49661,17 +49661,17 @@ class ConductTransaction extends (0, _react.Component) {
                                 className: "inputField"
                             }, void 0, false, {
                                 fileName: "client/src/components/ConductTransaction.js",
-                                lineNumber: 66,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/ConductTransaction.js",
-                            lineNumber: 65,
+                            lineNumber: 71,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                             fileName: "client/src/components/ConductTransaction.js",
-                            lineNumber: 68,
+                            lineNumber: 74,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.FormGroup), {
@@ -49683,17 +49683,17 @@ class ConductTransaction extends (0, _react.Component) {
                                 className: "inputField"
                             }, void 0, false, {
                                 fileName: "client/src/components/ConductTransaction.js",
-                                lineNumber: 70,
+                                lineNumber: 76,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "client/src/components/ConductTransaction.js",
-                            lineNumber: 69,
+                            lineNumber: 75,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                             fileName: "client/src/components/ConductTransaction.js",
-                            lineNumber: 72,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -49702,7 +49702,7 @@ class ConductTransaction extends (0, _react.Component) {
                             children: "Submit"
                         }, void 0, false, {
                             fileName: "client/src/components/ConductTransaction.js",
-                            lineNumber: 73,
+                            lineNumber: 79,
                             columnNumber: 13
                         }, this)
                     ]
@@ -49770,7 +49770,7 @@ class TransactionPool extends (0, _react.Component) {
             transactionPoolMap: {}
         });
         _defineProperty(this, "fetchTransactionPoolMap", ()=>{
-            fetch('http://localhost:3000/api/transaction-pool').then((response)=>response.json()).then((json)=>this.setState({
+            fetch('http://localhost:3000/api/transaction-pool-map').then((response)=>response.json()).then((json)=>this.setState({
                     transactionPoolMap: json
                 }));
         });
@@ -49787,10 +49787,10 @@ class TransactionPool extends (0, _react.Component) {
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "btnHolder",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "myBtn",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    className: "myBtn",
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
@@ -49802,34 +49802,34 @@ class TransactionPool extends (0, _react.Component) {
                                 lineNumber: 26,
                                 columnNumber: 25
                             }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "myBtn",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/blocks",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/blocks",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    className: "myBtn",
                                     children: "Blocks"
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 30,
-                                    columnNumber: 27
+                                    lineNumber: 32,
+                                    columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 29,
+                                lineNumber: 31,
                                 columnNumber: 25
                             }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                className: "myBtn",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                                    to: "/conduct-transaction",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                to: "/conduct-transaction",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    className: "myBtn",
                                     children: "Conduct Transaction"
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 33,
-                                    columnNumber: 27
+                                    lineNumber: 37,
+                                    columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 32,
+                                lineNumber: 36,
                                 columnNumber: 25
                             }, this)
                         ]
@@ -49842,31 +49842,58 @@ class TransactionPool extends (0, _react.Component) {
                         children: "Transaction Pool"
                     }, void 0, false, {
                         fileName: "client/src/components/TransactionPool.js",
-                        lineNumber: 36,
+                        lineNumber: 42,
                         columnNumber: 21
                     }, this),
-                    Object.values(this.state.transactionPoolMap).map((transaction)=>{
-                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    Object.values(this.state.transactionPoolMap).length > 0 ? Object.values(this.state.transactionPoolMap).map((transaction)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 40,
+                                    lineNumber: 44,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _transactionsDefault.default), {
                                     transaction: transaction
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 41,
+                                    lineNumber: 45,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, transaction.id, true, {
                             fileName: "client/src/components/TransactionPool.js",
-                            lineNumber: 39,
-                            columnNumber: 18
-                        }, this);
-                    })
+                            lineNumber: 43,
+                            columnNumber: 144
+                        }, this)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                fileName: "client/src/components/TransactionPool.js",
+                                lineNumber: 47,
+                                columnNumber: 29
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "client/src/components/TransactionPool.js",
+                                lineNumber: 48,
+                                columnNumber: 29
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "client/src/components/TransactionPool.js",
+                                lineNumber: 48,
+                                columnNumber: 35
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                children: "No transactions available"
+                            }, void 0, false, {
+                                fileName: "client/src/components/TransactionPool.js",
+                                lineNumber: 49,
+                                columnNumber: 29
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "client/src/components/TransactionPool.js",
+                        lineNumber: 46,
+                        columnNumber: 39
+                    }, this)
                 ]
             }, void 0, true, {
                 fileName: "client/src/components/TransactionPool.js",

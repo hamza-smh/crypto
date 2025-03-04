@@ -6,7 +6,7 @@ class TransactionPool extends Component{
     state={transactionPoolMap:{}}
 
     fetchTransactionPoolMap = ()=>{
-        fetch('http://localhost:3000/api/transaction-pool')
+        fetch('http://localhost:3000/api/transaction-pool-map')
        .then(response => response.json())
        .then(json=>this.setState({transactionPoolMap:json}));
     }
@@ -19,28 +19,38 @@ class TransactionPool extends Component{
             <div className="fullBody">
                 <div className="TransactionPool">
                     <div className='btnHolder'>
-                        <button className='myBtn'>
-                          <Link to='/'>Home</Link>
-                        </button>
-                        <button className='myBtn'>
-                          <Link to='/blocks'>Blocks</Link>
-                        </button>
-                        <button className='myBtn'>
-                          <Link to='/conduct-transaction'>Conduct Transaction</Link>
-                        </button>
+                        <Link to='/'>
+                          <button className='myBtn'>
+                              Home
+                          </button>
+                        </Link>
+                        <Link to='/blocks'>
+                            <button className='myBtn'>
+                                Blocks
+                            </button>
+                        </Link>
+                        <Link to='/conduct-transaction'>
+                            <button className='myBtn'>
+                                Conduct Transaction
+                            </button>
+                        </Link>
                     </div>
                     <h2>Transaction Pool</h2>
-
-                    {
-                        Object.values(this.state.transactionPoolMap).map(transaction=>{
-                            return(
+                    {Object.values(this.state.transactionPoolMap).length > 0 ? (
+                        Object.values(this.state.transactionPoolMap).map(transaction => (
                             <div key={transaction.id}>
                                 <hr />
-                                <Transaction transaction={transaction}/>
+                                <Transaction transaction={transaction} />
                             </div>
-                            )
-                        })
-                    }
+                        ))
+                    ) : (
+                        <div>
+                            <hr />
+                            <br /><br />
+                            <h3>No transactions available</h3>
+                        </div>
+                    )}
+
                 </div>
 
             </div>

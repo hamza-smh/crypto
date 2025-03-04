@@ -2,6 +2,7 @@
 import { FormGroup, FormControl } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import history from '../history'
 
 class ConductTransaction extends Component {
   state = { recipient: '', amount: 0 }
@@ -23,6 +24,7 @@ class ConductTransaction extends Component {
     .then(json=>{
          console.log("Transaction Response:", json); // Debugging log
          alert(json.message || json.type);
+         history.push('/transaction-pool'); // Redirect to blocks page after successful transaction.
     })
     .catch((error) => {
         console.error("Transaction Error:", error);
@@ -37,15 +39,21 @@ class ConductTransaction extends Component {
         <img className='smallLogo' src={logo}></img>
         <div className='ConductTransaction'>
           <div className='btnHolder'>
-            <button className='myBtn'>
-              <Link to='/'>Home</Link>
-            </button>
-            <button className='myBtn'>
-              <Link to='/blocks'>Blocks</Link>
-            </button>
-            <button className='myBtn'>
-              <Link to='/transaction-pool'>Transaction Pool</Link>
-            </button>
+            <Link to='/'>
+              <button className='myBtn'>
+                  Home
+              </button>
+            </Link>
+            <Link to='/blocks'>
+                <button className='myBtn'>
+                    Blocks
+                </button>
+            </Link>
+            <Link to='/transaction-pool'>
+                <button className='myBtn'>
+                    Transaction Pool
+                </button>
+            </Link>
           </div>
           <h3>Conduct a transaction</h3>
           <FormGroup>

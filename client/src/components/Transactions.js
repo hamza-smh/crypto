@@ -21,7 +21,7 @@ const Transaction=({transaction})=>{
                 recipients.map(recipient=>(
                     <div key={recipient} className='transaction'>
                         <div>
-                            To: {`${recipient.substring(0,20)}...`}
+                            To: {recipient.length>20?`${recipient.substring(0,20)}...`:recipient}
                         </div>
                         <div>
                             Sent: {outputMap[recipient]}
