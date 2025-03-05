@@ -90,7 +90,7 @@ button a, a:hover {
   text-decoration: none;
 }
 
-.ConductTransaction {
+.ConductTransaction .TransactionPool {
   margin: 10%;
 }
 

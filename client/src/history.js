@@ -1,3 +1,6 @@
-import history from "./history";
+// src/history.js
+import {createBrowserHistory} from 'history';
 
-history.push("/blocks");
+const history = createBrowserHistory();
+
+export default history;

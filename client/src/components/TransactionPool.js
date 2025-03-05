@@ -2,17 +2,44 @@ import React,{Component} from "react";
 import { Link } from "react-router-dom";
 import Transaction from "./Transactions";
 
+const POLL_INTERVAL_MS=10000;
 class TransactionPool extends Component{
-    state={transactionPoolMap:{}}
+    state={transactionPoolMap:{}, error:null}
 
     fetchTransactionPoolMap = ()=>{
-        fetch('http://localhost:3000/api/transaction-pool-map')
-       .then(response => response.json())
-       .then(json=>this.setState({transactionPoolMap:json}));
-    }
-    componentDidMount(){
+        fetch(`${document.location.origin}/api/transaction-pool-map`)
+       .then((response) => {
+               if (!response.ok) {
+                   throw new Error(`HTTP error! Status: ${response.status}`);
+               }
+               return response.json();
+           })
+           .then((json) => {
+               console.log("Transaction Pool Map:", json); // Debug log
+               this.setState({
+                   transactionPoolMap: json,
+                   error: null
+               });
+           })
+           .catch((error) => {
+               console.error("Fetch Error:", error.message); // Log error details
+               this.setState({
+                   error: error.message
+               });
+           });
+       };
+    componentDidMount() {
         this.fetchTransactionPoolMap();
+
+        this.interval = setInterval(() => {
+            console.log("Fetching transaction pool map...");
+            this.fetchTransactionPoolMap();
+        }, POLL_INTERVAL_MS);
     }
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
 
     render(){
         return(

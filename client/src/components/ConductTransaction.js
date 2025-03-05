@@ -1,10 +1,10 @@
  import React, { Component } from 'react'
 import { FormGroup, FormControl } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
-import history from '../history'
 
-class ConductTransaction extends Component {
+
+class ConductTransactionClass extends Component {
   state = { recipient: '', amount: 0 }
 
   updateRecipient = event => {
@@ -16,7 +16,7 @@ class ConductTransaction extends Component {
 
   conductTransaction=()=>{
     const {recipient, amount}=this.state;
-    fetch('http://localhost:3000/api/transact',{
+    fetch(`${document.location.origin}/api/transact`,{
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ recipient, amount })
@@ -24,7 +24,7 @@ class ConductTransaction extends Component {
     .then(json=>{
          console.log("Transaction Response:", json); // Debugging log
          alert(json.message || json.type);
-         history.push('/transaction-pool'); // Redirect to blocks page after successful transaction.
+         this.props.navigate('/transaction-pool'); // Redirect to blocks page after successful transaction.
     })
     .catch((error) => {
         console.error("Transaction Error:", error);
@@ -36,7 +36,7 @@ class ConductTransaction extends Component {
     console.log(this.state)
     return (
       <div className='fullBody'>
-        <img className='smallLogo' src={logo}></img>
+        <img className='smallLogo' src={logo} alt="logo"/>
         <div className='ConductTransaction'>
           <div className='btnHolder'>
             <Link to='/'>
@@ -84,5 +84,10 @@ class ConductTransaction extends Component {
     )
   }
 }
+
+const ConductTransaction = (props) => {
+  const navigate = useNavigate();
+  return <ConductTransactionClass {...props} navigate={navigate} />;
+};
 
 export default ConductTransaction
