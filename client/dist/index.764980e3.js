@@ -49607,9 +49607,9 @@ class ConductTransactionClass extends (0, _react.Component) {
                     amount
                 })
             }).then((response)=>response.json()).then((json)=>{
-                console.log("Transaction Response:", json); // Debugging log
+                console.log("Transaction Response:", json);
                 alert(json.message || json.type);
-                this.props.navigate('/transaction-pool'); // Redirect to blocks page after successful transaction.
+                this.props.navigate('/transaction-pool');
             }).catch((error)=>{
                 console.error("Transaction Error:", error);
                 alert("Failed to conduct transaction. Check console for details.");
@@ -49803,6 +49803,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _transactions = require("./Transactions");
 var _transactionsDefault = parcelHelpers.interopDefault(_transactions);
+var _s = $RefreshSig$();
 function _defineProperty(e, r, t) {
     return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
         value: t,
@@ -49826,7 +49827,7 @@ function _toPrimitive(t, r) {
     return ("string" === r ? String : Number)(t);
 }
 const POLL_INTERVAL_MS = 10000;
-class TransactionPool extends (0, _react.Component) {
+class TransactionPoolClass extends (0, _react.Component) {
     constructor(...args){
         super(...args);
         _defineProperty(this, "state", {
@@ -49848,6 +49849,14 @@ class TransactionPool extends (0, _react.Component) {
                 this.setState({
                     error: error.message
                 });
+            });
+        });
+        _defineProperty(this, "fetchMineTransactions", ()=>{
+            fetch(`${document.location.origin}/api/mine-transactions`).then((response)=>{
+                if (response.status === 200) {
+                    alert('success');
+                    this.props.navigate('/blocks');
+                } else alert('The mine-transaction block request did not complete');
             });
         });
     }
@@ -49877,12 +49886,12 @@ class TransactionPool extends (0, _react.Component) {
                                     children: "Home"
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 50,
+                                    lineNumber: 60,
                                     columnNumber: 27
                                 }, this)
                             }, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 49,
+                                lineNumber: 59,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -49892,12 +49901,12 @@ class TransactionPool extends (0, _react.Component) {
                                     children: "Blocks"
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 55,
+                                    lineNumber: 65,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 54,
+                                lineNumber: 64,
                                 columnNumber: 25
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -49907,90 +49916,124 @@ class TransactionPool extends (0, _react.Component) {
                                     children: "Conduct Transaction"
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 60,
+                                    lineNumber: 70,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 59,
+                                lineNumber: 69,
                                 columnNumber: 25
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "client/src/components/TransactionPool.js",
-                        lineNumber: 48,
+                        lineNumber: 58,
                         columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         children: "Transaction Pool"
                     }, void 0, false, {
                         fileName: "client/src/components/TransactionPool.js",
-                        lineNumber: 65,
+                        lineNumber: 75,
                         columnNumber: 21
                     }, this),
                     Object.values(this.state.transactionPoolMap).length > 0 ? Object.values(this.state.transactionPoolMap).map((transaction)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 67,
+                                    lineNumber: 77,
                                     columnNumber: 33
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _transactionsDefault.default), {
                                     transaction: transaction
                                 }, void 0, false, {
                                     fileName: "client/src/components/TransactionPool.js",
-                                    lineNumber: 68,
+                                    lineNumber: 78,
                                     columnNumber: 33
                                 }, this)
                             ]
                         }, transaction.id, true, {
                             fileName: "client/src/components/TransactionPool.js",
-                            lineNumber: 66,
+                            lineNumber: 76,
                             columnNumber: 144
                         }, this)) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 70,
+                                lineNumber: 80,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 71,
+                                lineNumber: 81,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 71,
+                                lineNumber: 81,
                                 columnNumber: 35
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                 children: "No transactions available"
                             }, void 0, false, {
                                 fileName: "client/src/components/TransactionPool.js",
-                                lineNumber: 72,
+                                lineNumber: 82,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "client/src/components/TransactionPool.js",
-                        lineNumber: 69,
+                        lineNumber: 79,
                         columnNumber: 39
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "client/src/components/TransactionPool.js",
+                        lineNumber: 84,
+                        columnNumber: 21
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "btnRed",
+                        onClick: this.fetchMineTransactions,
+                        children: "Mine the transaction"
+                    }, void 0, false, {
+                        fileName: "client/src/components/TransactionPool.js",
+                        lineNumber: 85,
+                        columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "client/src/components/TransactionPool.js",
-                lineNumber: 47,
+                lineNumber: 57,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "client/src/components/TransactionPool.js",
-            lineNumber: 46,
+            lineNumber: 56,
             columnNumber: 12
         }, this);
     }
 }
+const TransactionPool = (props)=>{
+    _s();
+    const navigate = (0, _reactRouterDom.useNavigate)();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(TransactionPoolClass, {
+        ...props,
+        navigate: navigate
+    }, void 0, false, {
+        fileName: "client/src/components/TransactionPool.js",
+        lineNumber: 95,
+        columnNumber: 10
+    }, undefined);
+};
+_s(TransactionPool, "CzcTeTziyjMsSrAVmHuCCb6+Bfg=", false, function() {
+    return [
+        (0, _reactRouterDom.useNavigate)
+    ];
+});
+_c = TransactionPool;
 exports.default = TransactionPool;
+var _c;
+$RefreshReg$(_c, "TransactionPool");
 
   $parcel$ReactRefreshHelpers$2a20.postlude(module);
 } finally {

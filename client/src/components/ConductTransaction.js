@@ -22,9 +22,9 @@ class ConductTransactionClass extends Component {
         body: JSON.stringify({ recipient, amount })
     }).then(response=>response.json())
     .then(json=>{
-         console.log("Transaction Response:", json); // Debugging log
+         console.log("Transaction Response:", json); 
          alert(json.message || json.type);
-         this.props.navigate('/transaction-pool'); // Redirect to blocks page after successful transaction.
+         this.props.navigate('/transaction-pool'); 
     })
     .catch((error) => {
         console.error("Transaction Error:", error);

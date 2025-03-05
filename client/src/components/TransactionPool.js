@@ -1,9 +1,9 @@
 import React,{Component} from "react";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Transaction from "./Transactions";
 
 const POLL_INTERVAL_MS=10000;
-class TransactionPool extends Component{
+class TransactionPoolClass extends Component{
     state={transactionPoolMap:{}, error:null}
 
     fetchTransactionPoolMap = ()=>{
@@ -27,7 +27,21 @@ class TransactionPool extends Component{
                    error: error.message
                });
            });
-       };
+    };
+
+    fetchMineTransactions=()=>{
+        fetch(`${document.location.origin}/api/mine-transactions`) 
+               .then((response => {
+                 if (response.status===200) {
+                     alert('success');
+                     this.props.navigate('/blocks');
+                 }
+                else {
+                     alert('The mine-transaction block request did not complete')
+                 }
+               }))
+    }
+
     componentDidMount() {
         this.fetchTransactionPoolMap();
 
@@ -77,7 +91,10 @@ class TransactionPool extends Component{
                             <h3>No transactions available</h3>
                         </div>
                     )}
-
+                    <hr />
+                    <button className="btnRed" onClick={this.fetchMineTransactions}>
+                        Mine the transaction
+                    </button>
                 </div>
 
             </div>
@@ -85,4 +102,8 @@ class TransactionPool extends Component{
     }
 }
 
+const TransactionPool = (props) => {
+  const navigate = useNavigate();
+  return <TransactionPoolClass {...props} navigate={navigate} />;
+};
 export default TransactionPool;
