@@ -8,6 +8,9 @@ const TransactionPool = require('./wallet/transaction-pool')
 const Wallet = require('./wallet')
 const TransactionMiner = require('./app/transaction-miner')
 
+const isDevelopment = process.env.ENV === 'development'
+
+if(isDevelopment){
 
 const app = express()
 const blockchain = new Blockchain();
@@ -180,14 +183,14 @@ setTimeout(() => {
   }
 }, 2000); // Delay execution by 2 seconds
 
-
+}
 let PEER_PORT
 
 if (process.env.GENERATE_PEER_PORT === 'true') {
   PEER_PORT = DEFAULT_PORT + Math.ceil(Math.random() * 1000)
 }
 
-const PORT = PEER_PORT || DEFAULT_PORT
+const PORT = process.env.PORT || PEER_PORT || DEFAULT_PORT
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)

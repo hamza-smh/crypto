@@ -6,7 +6,7 @@
     "test": "jest --watchAll",
     "start": "node index.js",
     "postinstall": "npm run build-client",
-    "dev": "concurrently \"npm run dev-client\" \"nodemon index.js\"",
+    "dev": "concurrently \"npm run dev-client\" \"cross-env ENV='development' nodemon index.js\"",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
     "build": "parcel build client/src/index.html --dist-dir client/dist",
     "start-redis": "redis-server --daemonize yes",
