@@ -10,7 +10,7 @@
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon index.js",
     "build": "parcel build client/src/index.html --dist-dir client/dist",
     "start-redis": "redis-server --daemonize yes",
-    "build-client": "npm run clean && parcel build --target client",
+    "build-client": "npm run clean && parcel build client/src/index.html --dist-dir client/dist",
     "dev-client": "parcel client/src/index.html --dist-dir client/dist",
     "clean": "rm -rf .parcel-cache"
   },
