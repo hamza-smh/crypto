@@ -12,7 +12,7 @@
     "start-redis": "redis-server --daemonize yes",
     "build-client": "npm run clean && parcel build client/src/index.html --out-dir client/dist",
     "dev-client": "parcel client/src/index.html --dist-dir client/dist",
-    "clean": "Remove-Item -Path '.parcel-cache' -Recurse -Force"
+    "clean": "rm -rf .parcel-cache"
   },
   "jest": {
     "testEnvironment": "node"
