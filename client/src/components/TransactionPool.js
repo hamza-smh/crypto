@@ -1,6 +1,8 @@
 import React,{Component} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import Transaction from "./Transactions";
+import SidePanel from "./sidePanel";
+import logo from '../assets/logo.png'
 
 const POLL_INTERVAL_MS=10000;
 class TransactionPoolClass extends Component{
@@ -56,28 +58,14 @@ class TransactionPoolClass extends Component{
 
 
     render(){
+        let transactionPoolMapLength = Object.values(this.state.transactionPoolMap).length
         return(
             <div className="fullBody">
+                <img className="smallLogo" src={logo} alt="logo"/>
                 <div className="TransactionPool">
-                    <div className='btnHolder'>
-                        <Link to='/'>
-                          <button className='myBtn'>
-                              Home
-                          </button>
-                        </Link>
-                        <Link to='/blocks'>
-                            <button className='myBtn'>
-                                Blocks
-                            </button>
-                        </Link>
-                        <Link to='/conduct-transaction'>
-                            <button className='myBtn'>
-                                Conduct Transaction
-                            </button>
-                        </Link>
-                    </div>
+                    <SidePanel home blocks conduct/>
                     <h2>Transaction Pool</h2>
-                    {Object.values(this.state.transactionPoolMap).length > 0 ? (
+                    {transactionPoolMapLength > 0 ? (
                         Object.values(this.state.transactionPoolMap).map(transaction => (
                             <div key={transaction.id}>
                                 <hr />
@@ -92,7 +80,11 @@ class TransactionPoolClass extends Component{
                         </div>
                     )}
                     <hr />
-                    <button className="btnRed" onClick={this.fetchMineTransactions}>
+                    <button button className = "btnRed"
+                    onClick = {
+                        this.fetchMineTransactions
+                    }
+                    disabled = {transactionPoolMapLength === 0}>
                         Mine the transaction
                     </button>
                 </div>

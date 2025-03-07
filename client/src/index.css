@@ -1,5 +1,6 @@
 .fullBody{
     background:#2b271a;
+    background-image: linear-gradient(to bottom,  #221e12 1%, #797a27 50%, #221e12 100% );
     color:#FFF;
     width:100%;
     height:100vh;
@@ -44,6 +45,9 @@
     padding-bottom: 2%;
     box-shadow: 1px 2px 10px #FFF;
 }
+.block:hover{
+    background-color: #424123aa;
+}
 .btnRed{
     background-color: #eaff01;
     margin-top: 10px;
@@ -69,31 +73,57 @@
     border: 1.5px solid #FFF;
     margin-bottom: 10px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 900;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
 }
 .myBtn:hover{
      background-color: rgb(251, 255, 27);
+     transform: translateX(72%);
+}
+.btnText{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration:none;
 }
 
 .btnHolder{
-    display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: space-around;
-    width:100%;
     position:absolute;
-    top: 0px;
-    left:0%;
+    top: 15%;
+    left:-17%;
     padding:10px;
-    background-image: linear-gradient(to bottom,  rgb(72, 73, 15), transparent);
+}
+.r10{
+    left:-14.5%
 }
 
-button a, a:hover{
+.myBtn a{
     color:#200101;
     text-decoration:none;
     cursor:pointer;
 }
+.myBtn a:hover{
+    text-decoration:none;
+}
 
-.ConductTransaction .TransactionPool{
-    margin: 10%;
+button[disabled] {
+    background-color: rgb(96, 91, 35);
+}
+
+
+ .TransactionPool{
+    margin: 10%;    
+}
+.ConductTransaction{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .inputField{
@@ -102,12 +132,16 @@ button a, a:hover{
     border: 1px solid #FFF;
     transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
     padding:10px;
+    width:50%
 }
+
 .inputField:focus{
     box-shadow: 1px 2px 10px rgb(251, 251, 69) !important;
     outline: none !important; 
 }
-
+.formGroup{
+    width:70%
+}
 .submit{
     background-color: #7a6a03;
     border:1px solid #FFF;
@@ -118,4 +152,10 @@ button a, a:hover{
 }
 .submit:hover{
     background-color: #c4bb05;
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    margin-left:30px;
 }

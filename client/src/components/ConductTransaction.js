@@ -2,6 +2,7 @@
 import { FormGroup, FormControl } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import SidePanel from './sidePanel'
 
 
 class ConductTransactionClass extends Component {
@@ -38,25 +39,10 @@ class ConductTransactionClass extends Component {
       <div className='fullBody'>
         <img className='smallLogo' src={logo} alt="logo"/>
         <div className='ConductTransaction'>
-          <div className='btnHolder'>
-            <Link to='/'>
-              <button className='myBtn'>
-                  Home
-              </button>
-            </Link>
-            <Link to='/blocks'>
-                <button className='myBtn'>
-                    Blocks
-                </button>
-            </Link>
-            <Link to='/transaction-pool'>
-                <button className='myBtn'>
-                    Transaction Pool
-                </button>
-            </Link>
-          </div>
+          <SidePanel home blocks pool/>
           <h3>Conduct a transaction</h3>
-          <FormGroup>
+          <div className="formGroup">
+            <FormGroup>
             <FormControl
               type='text'
               placeholder='Recipient'
@@ -64,9 +50,9 @@ class ConductTransactionClass extends Component {
               onChange={this.updateRecipient}
               className='inputField'
             />
-          </FormGroup>
-          <br />
-          <FormGroup>
+            </FormGroup>
+            <br />
+            <FormGroup>
             <FormControl
               type='number'
               placeholder='Amount'
@@ -74,7 +60,8 @@ class ConductTransactionClass extends Component {
               onChange={this.updateAmount}
               className = 'inputField'
             />
-          </FormGroup>
+            </FormGroup>
+          </div>
           <br />
             <button className='submit' onClick={this.conductTransaction}>
               Submit

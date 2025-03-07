@@ -22,7 +22,7 @@ class Block extends Component {
       return (
         <div>
           {data.map(transaction=>(
-            <div key={transaction.id}>
+            <div key={transaction.id} >
                 <hr />
                 <Transaction transaction={transaction}/>
             </div>

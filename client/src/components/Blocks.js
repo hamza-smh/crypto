@@ -3,6 +3,7 @@ import '../index.css'
 import Block from "./Block"
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png"
+import SidePanel from "./sidePanel";
 
 class Blocks extends Component{
     state = { blocks : [] }
@@ -16,23 +17,7 @@ class Blocks extends Component{
 
         return (
             <div className='fullBody'>
-               < div className = 'btnHolder' >
-                   <Link to='/'>
-                      <button className='myBtn'>
-                          Home
-                      </button>
-                    </Link>
-                    <Link to='/conduct-transaction'>
-                        <button className='myBtn'>
-                            Conduct Transaction
-                        </button>
-                    </Link>
-                    <Link to='/transaction-pool'>
-                        <button className='myBtn'>
-                            Transaction Pool
-                        </button>
-                    </Link>
-                </div>
+                <SidePanel home conduct pool/>
                 <img className="smallLogo" src={logo} alt="logo"/>
                 <h1><b>Blocks</b></h1>
                 

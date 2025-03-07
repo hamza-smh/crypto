@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import Blocks from './Blocks'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCube,
+  faHammer,
+  faExchangeAlt
+} from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.png'
 import '../index.css'
 import { Link } from 'react-router-dom'
+import SidePanel from './sidePanel';
 
 class App extends Component {
   state = {
@@ -34,17 +41,7 @@ class App extends Component {
 
     return (
         <div className='fullBody'>
-          <div className='btnHolder'>
-            <Link to='/blocks'>
-              <button className='myBtn'>Blocks </button>{' '}
-            </Link>{' '}
-            <Link to='/conduct-transaction'>
-              <button className='myBtn'>Conduct Transaction </button>{' '}
-            </Link>{' '}
-            <Link to='/transaction-pool'>
-              <button className='myBtn'>Transaction Pool </button>{' '}
-            </Link>{' '}
-          </div>{' '}
+          <SidePanel blocks conduct pool/>
           <img className='logo' src={logo} alt="logo"/>
           <div>
             <h1> Welcome to Cryptochain in React... </h1>{' '}
