@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import Blocks from './Blocks'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCube,
-  faHammer,
-  faExchangeAlt
-} from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.png'
 import '../index.css'
 import { Link } from 'react-router-dom'
 import SidePanel from './sidePanel';
+import Wallet from './Wallet'
+
 
 class App extends Component {
   state = {
@@ -53,7 +49,7 @@ class App extends Component {
             </div>{' '}
             <div> Balance: {balance} </div>{' '}
           </div>{' '}
-          {/* <Blocks /> */}{' '}
+          <Wallet />
         </div>
     )
   }
