@@ -6,6 +6,7 @@ import logo from "../assets/logo.png"
 import SidePanel from "./sidePanel";
 import Wallet from "./Wallet";
 
+
 class Blocks extends Component{
     state = { blocks : [],paginatedId: 1,blocksLength:0 }
     
